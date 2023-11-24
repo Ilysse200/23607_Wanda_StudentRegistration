@@ -13,7 +13,7 @@ public class StudentCourse {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "courseIdentifier")
     private Course course;
 
@@ -60,6 +60,15 @@ public class StudentCourse {
 //    public void setCourse_id(UUID course_id) {
 //        this.id = course_id;
 //    }
+
+
+    public Course getCourse() {
+        return course;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
+    }
 
     public CourseDefinition getCourseDefinition() {
         return this.courseDefinition;
